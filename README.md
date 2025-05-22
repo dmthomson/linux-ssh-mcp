@@ -213,13 +213,9 @@ You **must** include the connection details (host, username, and either password
 
 **Linux SSH MCP AI:** Uses **Python** and the robust `paramiko` library to establish **direct SSH connections from the MCP server** to any specified Linux VM. This makes it ideal for true remote administration.
 
-- **`xkiranj/linux-command-mcp`:** Primarily uses **Node.js/TypeScript** and seems more focused on executing commands *locally* on the machine where the MCP server is hosted, or relies on an external mechanism for remote execution. It doesn't natively handle SSH connectivity within the MCP server itself.
-
 **Dynamic Connectivity:**
 
 - **Linux SSH MCP AI:** Designed from the ground up for **dynamic host and credential input** through chat, making it reusable for managing multiple, different Linux VMs without server restarts or code changes.
-
-- **`xkiranj/linux-command-mcp`:** Its examples don't explicitly show dynamic host/credential input from the AI client for remote connections, implying a more static or pre-configured target.
 
 **Command Execution Capabilities (`sudo`):**
 
