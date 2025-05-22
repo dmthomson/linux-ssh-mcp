@@ -1,8 +1,8 @@
-# LinuxBridge AI: Dynamic Linux VM Management via AI Chat (MCP Server)
+# Linux SSH MCP: Dynamic Linux VM Management via AI Chat (MCP Server)
 
-LinuxBridge AI is an **MCP (Model Context Protocol) server** that lets your AI chat client (like Cline or Claude Desktop) talk to remote Linux Virtual Machines (VMs) using natural language. Built with Python and `paramiko`, this server acts as a bridge, letting your AI run shell commands, read files, query system info, and more on your VMs just by asking questions in chat.
+Linux SSH MCP AI is an **MCP (Model Context Protocol) server** that lets your AI chat client (like Cline or Claude Desktop) talk to remote Linux Virtual Machines (VMs) using natural language. Built with Python and `paramiko`, this server acts as a bridge, letting your AI run shell commands, read files, query system info, and more on your VMs just by asking questions in chat.
 
-Unlike solutions that hardcode connection details, LinuxBridge AI focuses on **dynamic connections**. You provide the Linux VM's host, username, and authentication details (password or private key path) directly in your chat, making the server reusable for many VMs without needing code changes or restarts.
+Unlike solutions that hardcode connection details, Linux SSH MCP AI focuses on **dynamic connections**. You provide the Linux VM's host, username, and authentication details (password or private key path) directly in your chat, making the server reusable for many VMs without needing code changes or restarts.
 
 ## 🚀 Features
 
@@ -211,33 +211,33 @@ You **must** include the connection details (host, username, and either password
 
 ## 🔍 How is this different from `xkiranj/linux-command-mcp`?
 
-While both projects aim to enable AI interaction with Linux commands via MCP, LinuxBridge AI offers distinct advantages and different focuses:
+While both projects aim to enable AI interaction with Linux commands via MCP, Linux SSH MCP AI offers distinct advantages and different focuses:
 
 - **Language &amp; SSH Integration:**
 
-**LinuxBridge AI:** Uses **Python** and the robust `paramiko` library to establish **direct SSH connections from the MCP server** to any specified Linux VM. This makes it ideal for true remote administration.
+**Linux SSH MCP AI:** Uses **Python** and the robust `paramiko` library to establish **direct SSH connections from the MCP server** to any specified Linux VM. This makes it ideal for true remote administration.
 
 - **`xkiranj/linux-command-mcp`:** Primarily uses **Node.js/TypeScript** and seems more focused on executing commands *locally* on the machine where the MCP server is hosted, or relies on an external mechanism for remote execution. It doesn't natively handle SSH connectivity within the MCP server itself.
 
 **Dynamic Connectivity:**
 
-- **LinuxBridge AI:** Designed from the ground up for **dynamic host and credential input** through chat, making it reusable for managing multiple, different Linux VMs without server restarts or code changes.
+- **Linux SSH MCP AI:** Designed from the ground up for **dynamic host and credential input** through chat, making it reusable for managing multiple, different Linux VMs without server restarts or code changes.
 
 - **`xkiranj/linux-command-mcp`:** Its examples don't explicitly show dynamic host/credential input from the AI client for remote connections, implying a more static or pre-configured target.
 
 **Command Execution Capabilities (`sudo`):**
 
-- **LinuxBridge AI:** Can execute commands that require `sudo` (assuming the SSH user has appropriate `sudoers` configuration on the target VM and can execute without an interactive TTY). This is crucial for many administrative tasks.
+- **Linux SSH MCP AI:** Can execute commands that require `sudo` (assuming the SSH user has appropriate `sudoers` configuration on the target VM and can execute without an interactive TTY). This is crucial for many administrative tasks.
 
 - **`xkiranj/linux-command-mcp`:** Explicitly states: "**Important Note: The Linux Command MCP server CANNOT execute interactive commands like `sudo`**." This limits its utility for full system administration, making it safer but less functional for elevated tasks.
 
 **Tool Granularity:**
 
-- **LinuxBridge AI:** Provides a set of defined tools (`read_file_content`, `get_disk_usage`, etc.) that guide the AI towards common administrative actions, making it easier for the AI to reason about its actions.
+- **Linux SSH MCP AI:** Provides a set of defined tools (`read_file_content`, `get_disk_usage`, etc.) that guide the AI towards common administrative actions, making it easier for the AI to reason about its actions.
 
 - **`xkiranj/linux-command-mcp`:** Offers a more generic `exec` command, which is powerful but might require more careful prompt engineering for safe and precise use by the AI.
 
-In essence, LinuxBridge AI is built for **more direct, flexible, and powerful remote Linux VM administration** through SSH, including the ability to run privileged commands, while `xkiranj/linux-command-mcp` prioritizes safety and local command execution, avoiding privileged operations.
+In essence, Linux SSH MCP AI is built for **more direct, flexible, and powerful remote Linux VM administration** through SSH, including the ability to run privileged commands, while `xkiranj/linux-command-mcp` prioritizes safety and local command execution, avoiding privileged operations.
 
 ## 🤝 Contributing
 
