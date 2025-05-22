@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "DynamicLinuxVMAdmin": {
+      "command": "/Users/davethomson/git/github.com/dmthomson/linux-ssh-mcp/venv/bin/python",
+      "args": ["/Users/davethomson/git/github.com/dmthomson/linux-ssh-mcp/server.py"],
+      "description": "An MCP server for interacting with any Linux VM dynamically via SSH.",
+      "prompts": [
+        {
+          "id": "dynamic_linux_chat_prompt",
+          "name": "Dynamic Linux VM Chat (Manual Connect)",
+          "description": "Chat with a Linux VM. You must provide host, username, and password/key details in your query.",
+          // Note: As with Claude Desktop/VS Code, Cline doesn't currently offer
+          // dedicated UI elements to input these dynamic parameters.
+          // You'll need to include them in your chat message.
+        }
+      ]
+    }
+  }
+}
