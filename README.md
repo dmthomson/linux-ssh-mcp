@@ -225,16 +225,11 @@ You **must** include the connection details (host, username, and either password
 
 - **Linux SSH MCP AI:** Can execute commands that require `sudo` (assuming the SSH user has appropriate `sudoers` configuration on the target VM and can execute without an interactive TTY). This is crucial for many administrative tasks.
 
-- **`xkiranj/linux-command-mcp`:** Explicitly states: "**Important Note: The Linux Command MCP server CANNOT execute interactive commands like `sudo`**." This limits its utility for full system administration, making it safer but less functional for elevated tasks.
-
 **Tool Granularity:**
 
 - **Linux SSH MCP AI:** Provides a set of defined tools (`read_file_content`, `get_disk_usage`, etc.) that guide the AI towards common administrative actions, making it easier for the AI to reason about its actions.
 
-- **`xkiranj/linux-command-mcp`:** Offers a more generic `exec` command, which is powerful but might require more careful prompt engineering for safe and precise use by the AI.
-
-In essence, Linux SSH MCP AI is built for **more direct, flexible, and powerful remote Linux VM administration** through SSH, including the ability to run privileged commands, while `xkiranj/linux-command-mcp` prioritizes safety and local command execution, avoiding privileged operations.
-
+In essence, Linux SSH MCP AI is built for **more direct, flexible, and powerful remote Linux VM administration** through SSH, including the ability to run privileged commands.
 ## 🤝 Contributing
 
 Contributions are welcome! If you have ideas for new features, improvements, or bug fixes, feel free to open an issue or submit a pull request.
