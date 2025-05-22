@@ -209,10 +209,6 @@ You **must** include the connection details (host, username, and either password
 
 - **Input Sanitization:** Implement stricter validation and sanitization for command inputs if you plan to extend this to untrusted or external users.
 
-## 🔍 How is this different from `xkiranj/linux-command-mcp`?
-
-While both projects aim to enable AI interaction with Linux commands via MCP, Linux SSH MCP AI offers distinct advantages and different focuses:
-
 - **Language &amp; SSH Integration:**
 
 **Linux SSH MCP AI:** Uses **Python** and the robust `paramiko` library to establish **direct SSH connections from the MCP server** to any specified Linux VM. This makes it ideal for true remote administration.
