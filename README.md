@@ -31,8 +31,8 @@ Execute arbitrary shell commands (`execute_linux_command`).
 ### 1. Clone the Repository
 
 ```
-git clone https://github.com/your-username/linux-bridge-ai.git
-cd linux-bridge-ai
+git clone https://github.com/your-username/linux-ssh-mcp.git
+cd linux-ssh-mcp
 
 ```
 
@@ -74,14 +74,14 @@ Locate your `cline_mcp_settings.json` file.
 
 - **Tip:** In Cline, you can often find a "Configure MCP Servers" option that opens this file directly.
 
-Add the following JSON configuration under the `mcpServers` object, replacing `/path/to/your/linux-bridge-ai` with your actual absolute path:
+Add the following JSON configuration under the `mcpServers` object, replacing `/path/to/your/linux-ssh-mcp` with your actual absolute path:
 
 ```
 {
   "mcpServers": {
     "DynamicLinuxVMAdmin": {
-      "command": "/path/to/your/linux-bridge-ai/venv/bin/python", // Adjust for Windows if needed (venv\\Scripts\\python.exe)
-      "args": ["/path/to/your/linux-bridge-ai/server.py"],
+      "command": "/path/to/your/linux-ssh-mcp/venv/bin/python", // Adjust for Windows if needed (venv\\Scripts\\python.exe)
+      "args": ["/path/to/your/linux-ssh-mcp/server.py"],
       "description": "An MCP server for interacting with any Linux VM dynamically via SSH (using venv).",
       "prompts": [
         {
@@ -100,15 +100,15 @@ Add the following JSON configuration under the `mcpServers` object, replacing `/
 
 1. $1
 2. $1
-Add the following JSON configuration within the `servers` array, replacing `/path/to/your/linux-bridge-ai` with your actual absolute path:
+Add the following JSON configuration within the `servers` array, replacing `/path/to/your/linux-ssh-mcp` with your actual absolute path:
 
 ```
 {
   "servers": [
     {
       "name": "DynamicLinuxVMAdmin",
-      "command": "/path/to/your/linux-bridge-ai/venv/bin/python", // Adjust for Windows if needed (venv\\Scripts\\python.exe)
-      "args": ["/path/to/your/linux-bridge-ai/server.py"],
+      "command": "/path/to/your/linux-ssh-mcp/venv/bin/python", // Adjust for Windows if needed (venv\\Scripts\\python.exe)
+      "args": ["/path/to/your/linux-ssh-mcp/server.py"],
       "description": "An MCP server for interacting with any Linux VM dynamically via SSH.",
       "prompts": [
         {
@@ -130,14 +130,14 @@ Add the following JSON configuration within the `servers` array, replacing `/pat
 3. Go to File > Preferences > Settings (or Code > Settings on macOS).
 
 Search for "MCP Servers" or directly open your settings.json file.
-Add the following configuration under `"github.copilot.chat.agentMode.mcpServers"`, replacing `/path/to/your/linux-bridge-ai` with your actual absolute path:
+Add the following configuration under `"github.copilot.chat.agentMode.mcpServers"`, replacing `/path/to/your/linux-ssh-mcp` with your actual absolute path:
 
 ```
 "github.copilot.chat.agentMode.mcpServers": [
   {
     "name": "DynamicLinuxVMAdmin",
-    "command": "/path/to/your/linux-bridge-ai/venv/bin/python", // Adjust for Windows if needed (venv\\Scripts\\python.exe)
-    "args": ["/path/to/your/linux-bridge-ai/server.py"],
+    "command": "/path/to/your/linux-ssh-mcp/venv/bin/python", // Adjust for Windows if needed (venv\\Scripts\\python.exe)
+    "args": ["/path/to/your/linux-ssh-mcp/server.py"],
     "description": "An MCP server for interacting with any Linux VM dynamically via SSH.",
     "prompts": [
       {
@@ -153,7 +153,7 @@ Add the following configuration under `"github.copilot.chat.agentMode.mcpServers
 
 ### 5. Start the MCP Server
 
-After configuring your client, navigate back to your `linux-bridge-ai` directory in your terminal (with the virtual environment activated) and run the server:
+After configuring your client, navigate back to your `linux-ssh-mcp` directory in your terminal (with the virtual environment activated) and run the server:
 
 ```
 source venv/bin/activate # (Or venv\Scripts\activate.bat on Windows)
